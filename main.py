@@ -284,6 +284,7 @@ def main():
         tf_data_load = False
         input_tensors = None
 
+    print('dim_input:', dim_input, 'dim_output', dim_output, 'test_num_updates', test_num_updates)
     model = MAML(dim_input, dim_output, test_num_updates=test_num_updates)
     if FLAGS.train or not tf_data_load:
         model.construct_model(input_tensors=input_tensors, prefix='metatrain_')
