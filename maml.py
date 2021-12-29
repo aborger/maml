@@ -90,6 +90,7 @@ class MAML:
                 task_outputa = self.forward(inputa, weights, reuse=reuse)  # only reuse on the first iter
                 task_lossa = self.loss_func(task_outputa, labela)
                 print('task_outputa:', task_outputa, "task_lossa:", task_lossa)
+                print('task_output_operation:', task_outputa.op)
 
                 grads = tf.gradients(task_lossa, list(weights.values()))
                 if FLAGS.stop_grad:
