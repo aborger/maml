@@ -80,6 +80,7 @@ class MAML:
 
             def task_metalearn(inp, reuse=True):
                 """ Perform gradient descent for one task in the meta-batch. """
+                print('------------- Meta Learning --------------------------------')
                 inputa, inputb, labela, labelb = inp
                 task_outputbs, task_lossesb = [], []
 
