@@ -54,13 +54,13 @@ class MAML:
             self.inputb = tf.placeholder(tf.float32)
             self.labela = tf.placeholder(tf.float32)
             self.labelb = tf.placeholder(tf.float32)
+            print('No input tensors!')
         else:
             self.inputa = input_tensors['inputa']
             self.inputb = input_tensors['inputb']
             self.labela = input_tensors['labela']
             self.labelb = input_tensors['labelb']
-
-        print('in_a:', self.inputa, 'in_b:', self.inputb, 'label_a:', self.labela, 'label_b', self.labelb)
+            print('in_a:', self.inputa, 'in_b:', self.inputb, 'label_a:', self.labela, 'label_b', self.labelb)
 
         with tf.variable_scope('model', reuse=None) as training_scope:
             if 'weights' in dir(self):
