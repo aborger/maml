@@ -152,6 +152,7 @@ class MAML:
                     gvs = [(tf.clip_by_value(grad, -10, 10), var) for grad, var in gvs]
                 self.metatrain_op = optimizer.apply_gradients(gvs)
         else:
+            print('--------------- Evaluating --------------------------')
             self.metaval_total_loss1 = total_loss1 = tf.reduce_sum(lossesa) / tf.to_float(FLAGS.meta_batch_size)
             self.metaval_total_losses2 = total_losses2 = [tf.reduce_sum(lossesb[j]) / tf.to_float(FLAGS.meta_batch_size) for j in range(num_updates)]
             if self.classification:
